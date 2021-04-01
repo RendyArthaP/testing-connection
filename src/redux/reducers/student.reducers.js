@@ -1,16 +1,15 @@
-import { REGISTER } from '../actions/student.actions'
-import { LOGIN } from '../actions/student.actions'
+import { REGISTER, LOGIN } from '../actions/student.actions'
 
 const token = localStorage.getItem('token')
 
 const initialState = token 
   ? {
     isLogged: true,
-    data: []
+    data: {}
   } 
   : {
     isLogged: false,
-    data: []
+    data: {}
   }
 
 const student = (state = initialState, action) => {
@@ -20,8 +19,9 @@ const student = (state = initialState, action) => {
       registerData: action.payload
     }
     case LOGIN:
-      return {
-        
+      return {  
+        data: action.payload,
+        isLogged: true
       }
     default: return state
   }

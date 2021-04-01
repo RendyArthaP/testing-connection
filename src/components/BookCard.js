@@ -1,22 +1,30 @@
 import React from 'react'
-import { Card, Button, Container } from 'react-bootstrap'
+import { Card, Button, Container, Col, Row } from 'react-bootstrap'
 
-const BookCard = () => {
+const BookCard = (books) => {
+  const buku = books.books
+  console.log(buku)
   return (
-    <Container className="pt-4">
-      <Card style={{ width: '14rem' }}>
-        <Card.Img variant="top"/>
-        <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of
-            the card's content.
-          </Card.Text>
-          <Button 
-            variant="primary">Sewa buku</Button>
-        </Card.Body>
-      </Card>
-    </Container>
+    <div>
+      {/* {buku.map((book) => (
+        <Container>
+          <Row>
+            <Col>
+              <Card style={{ width: '18rem' }}>
+                <Card.Img variant="top" />
+                <Card.Body>
+                  <Card.Title>{book.namaBuku}</Card.Title>
+                  <Card.Text>
+                    {book.penerbit}
+                  </Card.Text>
+                  <Button variant="primary">Sewa Buku</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      ))} */}
+    </div>
   )
 }
 

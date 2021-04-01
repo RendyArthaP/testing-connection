@@ -1,15 +1,22 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import BookCard from '../components/BookCard'
+import { getDataBuku } from '../redux/actions/buku.actions'
 
 const Home = () => {
+  const dispatch = useDispatch()
   const students = useSelector((state) => state.student.data)
-  console.log(students)
+  const books = useSelector((state) => state.buku.data.data)
+
+  useEffect(() => {
+    dispatch(getDataBuku())
+  }, [])
+
   return (
     <div>
       <h1>Hello, {students.name}</h1>
-      <h4>List of books you need:</h4>
-      <BookCard />
+      <h4>List books you need:</h4>
+      <BookCard books = {books}/>
     </div>
   )
 }

@@ -6,11 +6,11 @@ const BookCard = (buku) => {
   console.log(books)
   return (
     <div>
-      {/* {buku.map((book) => (
+      {!!books && books.map((book) => (
         <Container>
           <Row>
             <Col>
-              <Card style={{ width: '18rem' }} key={book.id}>
+              <Card style={{ width: '18rem' }} key={book._id}>
                 <Card.Img variant="top" />
                 <Card.Body>
                   <Card.Title>{book.namaBuku}</Card.Title>
@@ -23,7 +23,7 @@ const BookCard = (buku) => {
             </Col>
           </Row>
         </Container>
-      ))} */}
+      ))}
     </div>
   )
 }

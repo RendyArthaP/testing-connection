@@ -3,7 +3,7 @@ import { Card, Button, Container, Col, Row } from 'react-bootstrap'
 
 const BookCard = (buku) => {
   const books = buku.buku
-  console.log(books)
+
   return (
     <div>
       {!!books && books.map((book) => (

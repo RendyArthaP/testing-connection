@@ -7,10 +7,10 @@ const BookCard = (buku) => {
   return (
     <div>
       {!!books && books.map((book) => (
-        <Container>
+        <Container key={book._id}>
           <Row>
             <Col>
-              <Card style={{ width: '18rem' }} key={book._id}>
+              <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" />
                 <Card.Body>
                   <Card.Title>{book.namaBuku}</Card.Title>
